@@ -1,0 +1,20 @@
+[
+  {
+    "type": "event",
+    "name": "ProviderRegistered",
+    "anonymous": false,
+    "inputs": [
+      { "name": "provider", "type": "address", "indexed": true },
+      { "name": "endpoint", "type": "string", "indexed": false },
+      { "name": "geoHash", "type": "string", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "ProviderDeregistered",
+    "anonymous": false,
+    "inputs": [
+      { "name": "provider", "type": "address", "indexed": true }
+    ]
+  }
+]

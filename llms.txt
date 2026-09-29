@@ -1,0 +1,35 @@
+# nuthatch nest on arbitrum-one
+
+A self-hosted blockchain index. Query it locally; there is no third-party API.
+
+## Contracts
+- `dispatch` = 0x7101d5c1a5c89c3647f5118da118e56c023ba0b9
+- `seahorn` = 0xdde3f913cb6d1332bc018eb63647020a87dd7b37
+- `sdsce` = 0x1c3e9cca124ad19b9ed3c202d2e6cd106944640c
+- `mainline` = 0x12c722149804a8c1bb5924374e675956315b4456
+- `nuthatch_data_service` = 0x647d1fd14af2de3947522b74f1de5b99d317c10a
+
+## Tables (one per contract event)
+- `dispatch__provider_deregistered` - ProviderDeregistered(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider)
+- `dispatch__provider_registered` - ProviderRegistered(address,string,string) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider, endpoint, geoHash)
+- `mainline__provider_deregistered` - ProviderDeregistered(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider)
+- `mainline__provider_registered` - ProviderRegistered(address,string,string) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider, endpoint, geoHash)
+- `nuthatch_data_service__provider_deregistered` - ProviderDeregistered(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider)
+- `nuthatch_data_service__provider_registered` - ProviderRegistered(address,string,string) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider, endpoint, geoHash)
+- `sdsce__provider_deregistered` - ProviderDeregistered(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider)
+- `sdsce__provider_registered` - ProviderRegistered(address,string,string) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider, endpoint, geoHash)
+- `seahorn__provider_deregistered` - ProviderDeregistered(address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider)
+- `seahorn__provider_registered` - ProviderRegistered(address,string,string) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, provider, endpoint, geoHash)
+
+## Live HTTP API (run `nuthatch dev`)
+- `GET /`                    index status
+- `GET /tables`              every table with its columns
+- `GET /table/{name}?limit=N` recent rows of one table (hot + sealed)
+- `GET /entity/{id}`         one row by id (`{block:012}-{logindex:06}`)
+- `GET /sql?q=SELECT...`     read-only SQL; each table is a view named `{alias}__{event}`
+- `GET /balances?limit=N`    top holder balances (when an ERC-20 Transfer table is present)
+- `GET /balance/{address}`   one address's derived balance
+
+## MCP (for coding agents)
+Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, entity,
+balance, top_balances. Fully offline against the local instance; nothing phones home.

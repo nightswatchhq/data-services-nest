@@ -1,0 +1,17 @@
+-- views/10-example.sql - an authored derivation this nest computes. Uncomment to enable.
+--
+-- Read-only SQL over your nest's tables (tip ∪ sealed history), recomputed per query. Query it
+-- by name via `nuthatch sql` or the MCP; describe it in semantic.toml `[view.<name>]`.
+--
+-- Footguns (see the builder skill's views.md):
+--   • reserved-word columns like "from"/"to" must be double-quoted
+--   • big-int amounts use `<col>_dec` for SUM/AVG; ids, nonces and hashes stay on the raw column
+--     (`_dec` is NULL for a full-width uint256)
+--
+-- Example over this nest's `dispatch__provider_deregistered` table:
+--
+-- CREATE VIEW dispatch_activity AS
+--   SELECT count(*) AS events,
+--          min(block_number) AS first_block,
+--          max(block_number) AS last_block
+--   FROM "dispatch__provider_deregistered";

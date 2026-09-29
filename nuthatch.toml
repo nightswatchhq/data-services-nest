@@ -1,0 +1,43 @@
+# Provider registrations for the community data services Lodestar's census covers. Kittiwake read these
+# with one getLogs from block 0, which only Alchemy would serve. Only the two events the census uses are
+# in the ABI. Each start block is the contract's first log of any kind.
+[nest]
+name = "data-services-nest"
+chain = "arbitrum-one"
+chain_id = 42161
+rpc_urls = [
+    "https://arb1.arbitrum.io/rpc",
+    "https://arbitrum-one-rpc.publicnode.com",
+]
+schema_version = 1
+block_timestamps = true
+
+[[contracts]]
+alias = "dispatch"
+address = "0x7101d5c1a5c89c3647f5118da118e56c023ba0b9"
+start_block = 456917519
+abi = "abis/data_service.json"
+
+[[contracts]]
+alias = "seahorn"
+address = "0xdde3f913cb6d1332bc018eb63647020a87dd7b37"
+start_block = 462136060
+abi = "abis/data_service.json"
+
+[[contracts]]
+alias = "sdsce"
+address = "0x1c3e9cca124ad19b9ed3c202d2e6cd106944640c"
+start_block = 469630239
+abi = "abis/data_service.json"
+
+[[contracts]]
+alias = "mainline"
+address = "0x12c722149804a8c1bb5924374e675956315b4456"
+start_block = 470372862
+abi = "abis/data_service.json"
+
+[[contracts]]
+alias = "nuthatch_data_service"
+address = "0x647d1fd14af2de3947522b74f1de5b99d317c10a"
+start_block = 495515112
+abi = "abis/data_service.json"

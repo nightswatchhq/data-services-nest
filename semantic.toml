@@ -1,0 +1,94 @@
+# semantic.toml - what this nest's data *means* (RFC-0016). Read by the MCP `schema`
+# tool, the admin UI, and the scaffolded skill. Edit descriptions freely; the
+# `[table.*.footguns]` are DERIVED from the ABI and regenerated - leave them be.
+
+schema_version = 1
+
+[nest]
+description = "The `data-services-nest` nest on arbitrum-one. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.dispatch__provider_deregistered]
+description = "`ProviderDeregistered(address)` events emitted by the `dispatch` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderDeregistered(address) event"
+
+[table.dispatch__provider_deregistered.columns]
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.dispatch__provider_registered]
+description = "`ProviderRegistered(address,string,string)` events emitted by the `dispatch` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderRegistered(address,string,string) event"
+
+[table.dispatch__provider_registered.columns]
+endpoint = "The `endpoint` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+geoHash = "The `geoHash` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.mainline__provider_deregistered]
+description = "`ProviderDeregistered(address)` events emitted by the `mainline` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderDeregistered(address) event"
+
+[table.mainline__provider_deregistered.columns]
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.mainline__provider_registered]
+description = "`ProviderRegistered(address,string,string)` events emitted by the `mainline` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderRegistered(address,string,string) event"
+
+[table.mainline__provider_registered.columns]
+endpoint = "The `endpoint` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+geoHash = "The `geoHash` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.nuthatch_data_service__provider_deregistered]
+description = "`ProviderDeregistered(address)` events emitted by the `nuthatch_data_service` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderDeregistered(address) event"
+
+[table.nuthatch_data_service__provider_deregistered.columns]
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.nuthatch_data_service__provider_registered]
+description = "`ProviderRegistered(address,string,string)` events emitted by the `nuthatch_data_service` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderRegistered(address,string,string) event"
+
+[table.nuthatch_data_service__provider_registered.columns]
+endpoint = "The `endpoint` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+geoHash = "The `geoHash` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.sdsce__provider_deregistered]
+description = "`ProviderDeregistered(address)` events emitted by the `sdsce` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderDeregistered(address) event"
+
+[table.sdsce__provider_deregistered.columns]
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.sdsce__provider_registered]
+description = "`ProviderRegistered(address,string,string)` events emitted by the `sdsce` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderRegistered(address,string,string) event"
+
+[table.sdsce__provider_registered.columns]
+endpoint = "The `endpoint` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+geoHash = "The `geoHash` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.seahorn__provider_deregistered]
+description = "`ProviderDeregistered(address)` events emitted by the `seahorn` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderDeregistered(address) event"
+
+[table.seahorn__provider_deregistered.columns]
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.seahorn__provider_registered]
+description = "`ProviderRegistered(address,string,string)` events emitted by the `seahorn` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per ProviderRegistered(address,string,string) event"
+
+[table.seahorn__provider_registered.columns]
+endpoint = "The `endpoint` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+geoHash = "The `geoHash` string parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+provider = "The `provider` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[view]
+
+# Authored views (views/*.sql) are described here so the MCP/`/schema` can render them:
+# [view.your_view_name]
+# description = "What this derivation computes."
